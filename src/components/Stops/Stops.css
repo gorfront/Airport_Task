@@ -1,0 +1,30 @@
+.stops {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stops--title {
+    text-transform: uppercase;
+}
+
+.stops--list {
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stops--list--item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+}
+
+.stops--list--item:hover {
+    background-color: rgba(68, 133, 239, 0.326);
+}

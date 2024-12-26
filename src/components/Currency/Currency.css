@@ -1,0 +1,33 @@
+.currency {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.currency--title {
+    text-transform: uppercase;
+}
+
+.currency--list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.currency--list--item {
+    padding: 5px 9px;
+    border: 1px solid rgb(59, 124, 230);
+    color: rgb(59, 124, 230);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.currency--list--item:hover {
+    background-color: rgb(59, 124, 230);
+    color: white;
+}
+
+.currency--list--item--active {
+    background-color: rgb(59, 124, 230);
+    color: white;
+}
