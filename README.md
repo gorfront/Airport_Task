@@ -1,50 +1,128 @@
-# React + TypeScript + Vite
+Airport Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a simple interface for managing and displaying stops with customizable functionality. Users can toggle options, which dynamically update the application’s state.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Toggle stop options dynamically.
 
-## Expanding the ESLint configuration
+Ensure that at least one option is always selected.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Display interactive UI with hover effects and checkbox status.
 
-- Configure the top-level `parserOptions` property like this:
+Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To set up the project locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Clone the repository:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+git clone https://github.com/gorfront/Airport_Task.git
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Navigate to the project directory:
+
+cd Airport_Task
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm start
+
+File Structure
+
+Stops.tsx
+
+This file contains the core functionality of the project. Below is a detailed breakdown:
+
+Props
+
+stops (Array): List of stop objects with the following structure:
+
+id (number): Unique identifier for the stop.
+
+title (string): Display name of the stop.
+
+active (boolean): Indicates whether the stop is selected.
+
+setStops (Function): Updates the state of stops based on user interaction.
+
+Key Functionality
+
+State Management
+
+Ensures that at least one stop remains active.
+
+Dynamically updates the active state of stops when users click on an item.
+
+Event Handling
+
+Handles click events with the handlerCheck function, which updates the state based on the selected stop.
+
+UI Logic
+
+Displays a list of stops with checkboxes.
+
+Implements hover and selection styles for enhanced interactivity.
+
+Stops.css
+
+This file provides the styles for the Stops component. Key highlights include:
+
+Hover Effects: Adds a "только" label on hover.
+
+Dynamic Styling: Changes the appearance of items based on their active state.
+
+Positioning: Ensures proper alignment and spacing of elements.
+
+How It Works
+
+Rendering Stops
+
+The Stops component iterates through the stops array and renders each item with a checkbox and label.
+
+Updating State
+
+Clicking an item triggers the handlerCheck function, which updates the active state of the selected stop.
+
+Dynamic UI Behavior
+
+The "только" label appears when hovering over an item or when an item is active.
+
+Technologies Used
+
+React: For building the component-based UI.
+
+TypeScript: For type safety and improved code maintainability.
+
+CSS: For styling and visual enhancements.
+
+Contributing
+
+If you'd like to contribute:
+
+Fork the repository.
+
+Create a feature branch:
+
+git checkout -b feature-name
+
+Commit your changes:
+
+git commit -m "Add new feature"
+
+Push to your branch:
+
+git push origin feature-name
+
+Open a pull request.
+
+License
+
+This project is open-source and available under the MIT License. See the LICENSE file for more details.
+
+Contact
+
+If you have any questions or issues, feel free to contact gorfront or open an issue in the repository.
+
