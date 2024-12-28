@@ -30,24 +30,26 @@ const Main = ({ currency, stops }: MainProps) => {
 
   return (
     <div className="main">
-      {filterdItems.map((ticket) => (
-        <MainItem
-          key={ticket.price}
-          price={ticket.price}
-          departure_time={ticket.departure_time}
-          arrival_time={ticket.arrival_time}
-          stop={ticket.stops}
-          origin={ticket.origin}
-          origin_name={ticket.origin_name}
-          departure_date={ticket.departure_date}
-          arrival_date={ticket.arrival_date}
-          destination_name={ticket.destination_name}
-          carrier={ticket.carrier}
-          destination={ticket.destination}
-          currency={currency}
-          stops={[]}
-        />
-      ))}
+      {filterdItems
+        .sort((a, b) => a.price - b.price)
+        .map((ticket) => (
+          <MainItem
+            key={ticket.price}
+            price={ticket.price}
+            departure_time={ticket.departure_time}
+            arrival_time={ticket.arrival_time}
+            stop={ticket.stops}
+            origin={ticket.origin}
+            origin_name={ticket.origin_name}
+            departure_date={ticket.departure_date}
+            arrival_date={ticket.arrival_date}
+            destination_name={ticket.destination_name}
+            carrier={ticket.carrier}
+            destination={ticket.destination}
+            currency={currency}
+            stops={[]}
+          />
+        ))}
     </div>
   );
 };

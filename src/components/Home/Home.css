@@ -4,3 +4,11 @@
     display: flex;
     gap: 10px;
 }
+
+@media only screen and (max-width: 1065px) {
+    .body {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

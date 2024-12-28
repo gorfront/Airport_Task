@@ -3,10 +3,10 @@ import Asside from "../Asside/Asside";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import "./Home.css";
-import { CURRENCY, STOPS } from "../../utils/constants";
+import { STOPS } from "../../utils/constants";
+import { CurrencyProps } from "../../utils/types";
 
-const Home = () => {
-  const [currency, setCurrency] = useState(CURRENCY);
+const Home = ({ currency, setCurrency }: CurrencyProps) => {
   const [stops, setStops] = useState(STOPS);
 
   return (

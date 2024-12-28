@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { Main, MainProps } from "../../utils/types";
 import "./Main.css";
+import { calculatePrice, getCurrencySymbol } from "../../utils/hooks";
 
 const MainItem: React.FC<Main & MainProps> = ({
   price,
@@ -14,29 +16,8 @@ const MainItem: React.FC<Main & MainProps> = ({
   currency,
   stop,
 }) => {
+  const navigate = useNavigate();
   const activeCurrency = currency.find((el) => el.active)?.title || "RUB";
-
-  const getCurrencySymbol = (currency: string): string => {
-    switch (currency) {
-      case "USD":
-        return "$";
-      case "EUR":
-        return "€";
-      default:
-        return "₽";
-    }
-  };
-
-  const calculatePrice = (price: number, currency: string): string => {
-    switch (currency) {
-      case "USD":
-        return (price / 99.69).toFixed(2);
-      case "EUR":
-        return (price / 103.97).toFixed(2);
-      default:
-        return price.toString();
-    }
-  };
 
   const formatDate = (input: string): string => {
     const [day, month, year] = input.split(".").map(Number);
@@ -68,7 +49,7 @@ const MainItem: React.FC<Main & MainProps> = ({
   const displayedPrice = calculatePrice(price, activeCurrency);
 
   return (
-    <div className="main--item">
+    <div className="main--item" onClick={() => navigate(`/${price}`)}>
       <div className="main--item--left">
         <img src="turkish-airlines-logo.png" alt="Turkish Airlines Logo" />
         <button>

@@ -28,3 +28,20 @@
 .stops--list--item:hover {
     background-color: rgba(68, 133, 239, 0.326);
 }
+
+.stops--list--item:hover::after,
+.stops--list--item--check:checked+span::after {
+    content: "только";
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    color: #007bff;
+    font-size: 14px;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 430px) {
+    .stops--title {
+        font-size: 16px;
+    }
+}
